@@ -23,8 +23,8 @@
 	<div class="welcome">
 		<h2>Welcome to</h2>
 		<div class="row">
-			<h1>Story</h1>
-			<h1>Base</h1>
+			<h1 class="story">Story</h1>
+			<h1 class="base">Base</h1>
 		</div>
 		<div class="row">
 			<a href="https://github.com/3derekmason/story_base" target="_blank">VIEW CODE</a>
@@ -40,6 +40,26 @@
 </div>
 
 <style>
+	h1 {
+		font-size: 72px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin: 0px;
+	}
+	h2 {
+		color: var(--color-story);
+		font-size: 40px;
+		font-weight: 400;
+		margin: 0;
+		font-variant: small-caps;
+	}
+	.story {
+		color: var(--color-main-light);
+	}
+	.base {
+		color: var(--accent-color);
+	}
 	.content {
 		width: 100%;
 		height: var(--view-height);
@@ -53,6 +73,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		gap: 16px;
 		height: 100%;
 		width: 60%;
 	}
@@ -61,6 +82,7 @@
 		display: flex;
 		align-items: center;
 		gap: 24px;
+		margin-bottom: 16px;
 	}
 
 	.about {
@@ -69,5 +91,21 @@
 		box-shadow: 0px 5px 5px -3px #00000020, 0px 8px 10px 1px #00000014, 0px 3px 14px 2px #00000012;
 		border-radius: 4px;
 		padding: 32px;
+	}
+
+	a {
+		width: 160px;
+		height: 48px;
+		display: grid;
+		place-content: center;
+		text-decoration: none;
+		color: var(--color-story-light);
+		border: 1px solid var(--color-story-light);
+		border-radius: 8px;
+		box-shadow: 0px 4px 0px var(--color-story);
+	}
+	a:active {
+		box-shadow: none;
+		transform: translateY(4px);
 	}
 </style>

@@ -12,9 +12,15 @@
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
+
+	--color-main: #ff6f00;
+	--color-main-light: #ffc400;
+
+	--color-story: #006af8;
+	--color-story-light: #009bff;
+
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
-
 	--view-height: calc(100vh - 48px);
 }
 
