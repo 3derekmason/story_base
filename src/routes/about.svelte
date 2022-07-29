@@ -14,6 +14,10 @@
 	export const prerender = true;
 </script>
 
+<script>
+	import TurningPage from '../lib/stories/TurningPage.svelte';
+</script>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
@@ -26,6 +30,7 @@
 			<h1 class="story">Story</h1>
 			<h1 class="base">Base</h1>
 		</div>
+		<TurningPage />
 		<div class="row">
 			<a href="https://github.com/3derekmason/story_base" target="_blank">VIEW CODE</a>
 			<a href="https://derekmason.dev" target="_blank">ABOUT DEREK</a>
@@ -46,6 +51,8 @@
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		margin: 0px;
+		text-shadow: 0px 4px 0px var(--primary-color);
+		animation: story 4s infinite;
 	}
 	h2 {
 		color: var(--color-story);
@@ -107,5 +114,23 @@
 	a:active {
 		box-shadow: none;
 		transform: translateY(4px);
+	}
+
+	@keyframes story {
+		0% {
+			text-shadow: 0px 0px 0px var(--primary-color);
+		}
+		25% {
+			text-shadow: 0px 2px 0px var(--primary-color);
+		}
+		50% {
+			text-shadow: 0px 4px 0px var(--primary-color);
+		}
+		75% {
+			text-shadow: 0px 2px 0px var(--primary-color);
+		}
+		100% {
+			text-shadow: 0px 0px 0px var(--primary-color);
+		}
 	}
 </style>
