@@ -89,7 +89,6 @@
 		display: flex;
 		align-items: center;
 		gap: 24px;
-		margin-bottom: 16px;
 	}
 
 	.about {
