@@ -20,31 +20,54 @@
 </svelte:head>
 
 <div class="content">
-	<h1>About this app</h1>
-
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<pre>npm create svelte@latest</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
-	</p>
+	<div class="welcome">
+		<h2>Welcome to</h2>
+		<div class="row">
+			<h1>Story</h1>
+			<h1>Base</h1>
+		</div>
+		<div class="row">
+			<a href="https://github.com/3derekmason/story_base" target="_blank">VIEW CODE</a>
+			<a href="https://derekmason.dev" target="_blank">ABOUT DEREK</a>
+		</div>
+	</div>
+	<div class="about">
+		<p>
+			Thanks for checking out the library! I created this site to showcase my stories and articles.
+			Built using Svelte and deployed with Vercel.
+		</p>
+	</div>
 </div>
 
 <style>
 	.content {
 		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
+		height: var(--view-height);
+		display: flex;
+		align-items: center;
+	}
+
+	.welcome {
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		width: 60%;
+	}
+
+	.row {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
+
+	.about {
+		width: 24%;
+		height: 80%;
+		box-shadow: 0px 5px 5px -3px #00000020, 0px 8px 10px 1px #00000014, 0px 3px 14px 2px #00000012;
+		border-radius: 4px;
+		padding: 32px;
 	}
 </style>
