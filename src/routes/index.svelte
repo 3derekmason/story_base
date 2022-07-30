@@ -57,7 +57,8 @@
 		</button>
 	</div>
 	<div class="container">
-		<div class="title"><h4>Stories about {selected}</h4></div>
+		<div class="title"><h4>stories about <em>{selected}</em></h4></div>
+		<div class="tiles" />
 	</div>
 </section>
 
@@ -78,6 +79,7 @@
 		justify-content: center;
 		align-items: center;
 		gap: 64px;
+		border-bottom: 1px solid var(--color-main);
 	}
 
 	h1 {
@@ -118,5 +120,22 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.title {
+		text-align: center;
+		width: 90%;
+		height: 40px;
+		color: var(--text-color);
+		font-variant: small-caps;
+	}
+
+	em {
+		color: var(--color-story);
+		font-variant: normal;
+	}
+	.tiles {
+		width: 90%;
+		height: calc(100% - 40px);
 	}
 </style>
