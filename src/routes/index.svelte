@@ -16,20 +16,22 @@
 
 <section>
 	<div class="message">
-		<h2
+		<button
+			disabled={selected === 'training.'}
 			on:click={() => {
 				select('training.');
 			}}
 		>
 			TRAINING
-		</h2>
-		<h2
+		</button>
+		<button
+			disabled={selected === 'programming.'}
 			on:click={() => {
 				select('programming.');
 			}}
 		>
 			PROGRAMMING
-		</h2>
+		</button>
 		<h1
 			on:click={() => {
 				select('everything...');
@@ -37,20 +39,22 @@
 		>
 			STORY BASE
 		</h1>
-		<h2
+		<button
+			disabled={selected === 'health.'}
 			on:click={() => {
 				select('health.');
 			}}
 		>
 			WELLNESS
-		</h2>
-		<h2
+		</button>
+		<button
+			disabled={selected === 'life.'}
 			on:click={() => {
 				select('life.');
 			}}
 		>
 			LIFE
-		</h2>
+		</button>
 	</div>
 	<div class="container">
 		<div class="title"><h4>Stories about {selected}</h4></div>
@@ -85,14 +89,32 @@
 		color: var(--color-main-light);
 		text-shadow: 0px 4px 0px var(--color-main);
 	}
+
+	button {
+		border: none;
+		background: transparent;
+		color: var(--accent-color);
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	button:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+
+	button:disabled {
+		opacity: 0.8;
+		color: var(--color-main);
+		cursor: default;
+	}
+	button:disabled:hover {
+		text-decoration: none;
+	}
+
 	.container {
 		width: 100%;
 		height: calc(var(--view-height) - 188px);
-		box-shadow: 0px 5px 5px -3px #00000020, 0px 8px 10px 1px #00000014, 0px 3px 14px 2px #00000012;
-		background: radial-gradient(ellipse at left, var(--color-story-transparent), 20%, transparent),
-			radial-gradient(ellipse at top, var(--color-story-transparent), 20%, transparent),
-			radial-gradient(ellipse at right, #ff3e0020, 30%, transparent),
-			radial-gradient(ellipse at bottom, #ff3e0020, 30%, transparent);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
