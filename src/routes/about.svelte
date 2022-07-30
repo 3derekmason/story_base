@@ -131,8 +131,8 @@
 		width: 160px;
 		height: 48px;
 		text-decoration: none;
-		color: var(--color-story-light);
-		border: 1px solid var(--color-story-light);
+		color: var(--color-story);
+		border: 1px solid var(--color-story);
 		border-radius: 8px;
 		box-shadow: 0px 4px 0px var(--color-story);
 	}
