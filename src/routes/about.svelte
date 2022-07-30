@@ -16,6 +16,8 @@
 
 <script>
 	import TurningPage from '../lib/stories/TurningPage.svelte';
+	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
+	import CodeTags from 'svelte-material-icons/CodeTags.svelte';
 </script>
 
 <svelte:head>
@@ -25,15 +27,19 @@
 
 <div class="content">
 	<div class="welcome">
-		<h2>Welcome to</h2>
+		<h2>Welcome to Derek's</h2>
 		<div class="row">
 			<h1 class="story">Story</h1>
 			<h1 class="base">Base</h1>
 		</div>
 		<TurningPage />
 		<div class="row">
-			<a id="direct" href="https://github.com/3derekmason/story_base" target="_blank">VIEW CODE</a>
-			<a id="direct" href="https://derekmason.dev" target="_blank">ABOUT DEREK</a>
+			<a id="direct" href="https://github.com/3derekmason/story_base" target="_blank"
+				>VIEW CODE <CodeTags size="24" /></a
+			>
+			<a id="direct" href="https://derekmason.dev" target="_blank"
+				>ABOUT DEREK <ChevronRight size="24" /></a
+			>
 		</div>
 	</div>
 	<div class="about">
@@ -118,10 +124,12 @@
 		margin: 0;
 	}
 	a#direct {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
 		width: 160px;
 		height: 48px;
-		display: grid;
-		place-content: center;
 		text-decoration: none;
 		color: var(--color-story-light);
 		border: 1px solid var(--color-story-light);
@@ -138,6 +146,17 @@
 		height: 44px;
 		border-radius: 8px;
 		border: none;
+		color: #fff;
+		background: var(--color-story);
+		transition: 0.1s;
+	}
+	button:hover {
+		cursor: pointer;
+		transition: 0.1s;
+		background: var(--color-story-light);
+	}
+	button:active {
+		background: var(--color-story-transparent);
 	}
 
 	@keyframes story {
