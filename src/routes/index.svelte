@@ -4,6 +4,7 @@
 
 <script>
 	import Magnify from 'svelte-material-icons/Magnify.svelte';
+	import StoryTile from '../lib/stories/StoryTile.svelte';
 
 	let selected = 'everything...';
 	let search = '';
@@ -66,7 +67,11 @@
 		</button>
 	</div>
 	<div class="container">
-		<div class="tiles" />
+		<div class="tiles">
+			<StoryTile />
+			<StoryTile />
+			<StoryTile />
+		</div>
 	</div>
 </section>
 
@@ -167,7 +172,7 @@
 
 	.title {
 		padding-left: 8px;
-		width: 220px;
+		width: 200px;
 		backdrop-filter: blur(4px);
 		display: flex;
 		align-items: center;
@@ -183,5 +188,11 @@
 	.tiles {
 		width: 90%;
 		height: calc(100% - 40px);
+		padding: 24px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 24px;
+		overflow: auto;
 	}
 </style>
