@@ -43,7 +43,7 @@
 		</div>
 	</div>
 	<div class="about">
-		<p>Hi there, thanks for checking out the library.</p>
+		<p>Hi there, I'm Derek. Thanks for checking out my library.</p>
 		<p>
 			Story Base was created as a home for my stories and articles. I wanted to make an accessible
 			and enjoyable exprience for my readers, and truly make these stories my own.
@@ -142,6 +142,7 @@
 	}
 
 	button {
+		margin-top: 24px;
 		width: 220px;
 		height: 44px;
 		border-radius: 8px;
