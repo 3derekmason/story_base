@@ -3,7 +3,19 @@
 </script>
 
 <script>
-	let selected = 'All';
+	let selected = 'everything...';
+	const train = () => {
+		selected = 'training.';
+	};
+	const program = () => {
+		selected = 'programming.';
+	};
+	const wellness = () => {
+		selected = 'wellness.';
+	};
+	const life = () => {
+		selected = 'life.';
+	};
 </script>
 
 <svelte:head>
@@ -13,14 +25,14 @@
 
 <section>
 	<div class="message">
-		<h2>TRAINING</h2>
-		<h2>PROGRAMMING</h2>
+		<h2 on:click={train}>TRAINING</h2>
+		<h2 on:click={program}>PROGRAMMING</h2>
 		<h1>STORY BASE</h1>
-		<h2>WELLNESS</h2>
-		<h2>LIFE</h2>
+		<h2 on:click={wellness}>WELLNESS</h2>
+		<h2 on:click={life}>LIFE</h2>
 	</div>
 	<div class="container">
-		<div class="title"><h4>Viewing {selected} stories:</h4></div>
+		<div class="title"><h4>Stories about {selected}</h4></div>
 	</div>
 </section>
 
