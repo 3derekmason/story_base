@@ -90,6 +90,7 @@
 		margin: 0px;
 		color: var(--color-main-light);
 		text-shadow: 0px 4px 0px var(--color-main);
+		cursor: pointer;
 	}
 
 	button {
