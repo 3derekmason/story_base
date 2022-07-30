@@ -32,15 +32,22 @@
 		</div>
 		<TurningPage />
 		<div class="row">
-			<a href="https://github.com/3derekmason/story_base" target="_blank">VIEW CODE</a>
-			<a href="https://derekmason.dev" target="_blank">ABOUT DEREK</a>
+			<a id="direct" href="https://github.com/3derekmason/story_base" target="_blank">VIEW CODE</a>
+			<a id="direct" href="https://derekmason.dev" target="_blank">ABOUT DEREK</a>
 		</div>
 	</div>
 	<div class="about">
+		<p>Hi there, thanks for checking out the library.</p>
 		<p>
-			Thanks for checking out the library! I created this site to showcase my stories and articles.
-			Built using Svelte and deployed with Vercel.
+			Story Base was created as a home for my stories and articles. I wanted to make an accessible
+			and enjoyable exprience for my readers, and truly make these stories my own.
 		</p>
+		<p>
+			Built using <a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>, tested with
+			<a href="https://playwright.dev/" target="_blank">PlayWright</a>, and developed according to
+			Web Standards definded by the WC3.
+		</p>
+		<button>START READING!</button>
 	</div>
 </div>
 
@@ -93,13 +100,24 @@
 
 	.about {
 		width: 24%;
-		height: 80%;
+		height: 400px;
 		box-shadow: 0px 5px 5px -3px #00000020, 0px 8px 10px 1px #00000014, 0px 3px 14px 2px #00000012;
 		border-radius: 4px;
-		padding: 32px;
+		padding: 48px;
+		background: radial-gradient(ellipse at right, var(--color-story-transparent), 20%, transparent),
+			radial-gradient(ellipse at bottom, #ff3e0020, 30%, transparent);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 16px;
 	}
 
-	a {
+	p {
+		color: var(--color-story);
+		margin: 0;
+	}
+	a#direct {
 		width: 160px;
 		height: 48px;
 		display: grid;
@@ -110,9 +128,16 @@
 		border-radius: 8px;
 		box-shadow: 0px 4px 0px var(--color-story);
 	}
-	a:active {
+	a#direct:active {
 		box-shadow: none;
 		transform: translateY(4px);
+	}
+
+	button {
+		width: 220px;
+		height: 44px;
+		border-radius: 8px;
+		border: none;
 	}
 
 	@keyframes story {
