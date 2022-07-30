@@ -18,6 +18,7 @@
 	import TurningPage from '../lib/stories/TurningPage.svelte';
 	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 	import CodeTags from 'svelte-material-icons/CodeTags.svelte';
+	import { goto } from '$app/navigation';
 </script>
 
 <svelte:head>
@@ -27,7 +28,7 @@
 
 <div class="content">
 	<div class="welcome">
-		<h2>Welcome to Derek's</h2>
+		<h2>Welcome to</h2>
 		<div class="row">
 			<h1 class="story">Story</h1>
 			<h1 class="base">Base</h1>
@@ -43,17 +44,21 @@
 		</div>
 	</div>
 	<div class="about">
-		<p>Hi there, I'm Derek. Thanks for checking out my library.</p>
+		<p>Hi there, I'm Derek. Thanks for checking out my collection.</p>
 		<p>
 			Story Base was created as a home for my stories and articles. I wanted to make an accessible
-			and enjoyable exprience for my readers, and truly make these stories my own.
+			and enjoyable exprience for readers, and truly make these stories my own.
 		</p>
 		<p>
 			Built using <a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>, tested with
 			<a href="https://playwright.dev/" target="_blank">PlayWright</a>, and developed according to
 			Web Standards definded by the WC3.
 		</p>
-		<button>START READING!</button>
+		<button
+			on:click={() => {
+				goto('/');
+			}}>START READING!</button
+		>
 	</div>
 </div>
 
