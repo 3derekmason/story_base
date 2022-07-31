@@ -5,13 +5,7 @@
 	import Dumbbell from 'svelte-material-icons/Dumbbell.svelte';
 	import HospitalBox from 'svelte-material-icons/HospitalBox.svelte';
 
-	let story = {
-		title: 'Hello World',
-		author: 'Derek Mason',
-		desc: 'This is a story tile',
-		tags: ['life', 'training'],
-		date: new Date()
-	};
+	export let story;
 </script>
 
 <div class="tile">
@@ -36,9 +30,9 @@
 		</ul>
 	</div>
 
-	<h4>{story.desc}</h4>
+	<h4>{story.body}</h4>
 
-	<h6>{story.date}</h6>
+	<h6>{story.created_at}</h6>
 </div>
 
 <style>

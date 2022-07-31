@@ -3,14 +3,29 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
+
 	import Magnify from 'svelte-material-icons/Magnify.svelte';
 	import StoryTile from '../lib/stories/StoryTile.svelte';
+
+	let stories = [];
+	const getStories = () => {
+		fetch('https://thestorybase.herokuapp.com/api/')
+			.then((res) => res.json())
+			.then((data) => {
+				stories = data;
+			});
+	};
 
 	let selected = 'everything...';
 	let search = '';
 	const select = (string) => {
 		selected = string;
 	};
+
+	onMount(async () => {
+		await getStories();
+	});
 </script>
 
 <svelte:head>
@@ -68,9 +83,9 @@
 	</div>
 	<div class="container">
 		<div class="tiles">
-			<StoryTile />
-			<StoryTile />
-			<StoryTile />
+			{#each stories as story}
+				<StoryTile {story} />
+			{/each}
 		</div>
 	</div>
 </section>
