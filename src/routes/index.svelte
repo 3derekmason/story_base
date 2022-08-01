@@ -147,8 +147,14 @@
 		text-transform: uppercase;
 		margin: 0px;
 		color: var(--color-main-light);
-		text-shadow: 0px 4px 0px var(--color-main);
+		text-shadow: 0px 3px 0px var(--color-main);
 		cursor: pointer;
+		transition: 0.1s;
+	}
+	h1:active {
+		transition: 0.1s;
+		text-shadow: none;
+		transform: translateY(3px);
 	}
 
 	.main {
@@ -170,7 +176,6 @@
 		backdrop-filter: blur(15px);
 		display: flex;
 		justify-content: center;
-		align-items: center;
 		gap: 16px;
 		border: 1px solid red;
 		border-radius: 16px;
