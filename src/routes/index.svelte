@@ -13,7 +13,19 @@
 		fetch('https://thestorybase.herokuapp.com/api/')
 			.then((res) => res.json())
 			.then((data) => {
-				stories = data;
+				if (selected === 'everything...') {
+					stories = data;
+				} else {
+					const selection = selected.slice(0, -1);
+					const filtered = [];
+					data.forEach((story) => {
+						console.log(story.tags);
+						if (story.tags.includes(selection)) {
+							filtered.push(story);
+						}
+					});
+					stories = filtered;
+				}
 			});
 	};
 
@@ -39,6 +51,7 @@
 			disabled={selected === 'training.'}
 			on:click={() => {
 				select('training.');
+				getStories();
 			}}
 		>
 			TRAINING
@@ -47,6 +60,7 @@
 			disabled={selected === 'programming.'}
 			on:click={() => {
 				select('programming.');
+				getStories();
 			}}
 		>
 			PROGRAMMING
@@ -55,6 +69,7 @@
 			<h1
 				on:click={() => {
 					select('everything...');
+					getStories();
 				}}
 			>
 				STORY BASE
@@ -68,6 +83,7 @@
 			disabled={selected === 'health.'}
 			on:click={() => {
 				select('health.');
+				getStories();
 			}}
 		>
 			WELLNESS
@@ -76,6 +92,7 @@
 			disabled={selected === 'life.'}
 			on:click={() => {
 				select('life.');
+				getStories();
 			}}
 		>
 			LIFE
