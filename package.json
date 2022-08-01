@@ -27,6 +27,7 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
 		"cookie": "^0.4.1",
+		"relative-time-ago": "^1.0.8",
 		"svelte-material-icons": "^2.0.4"
 	}
 }

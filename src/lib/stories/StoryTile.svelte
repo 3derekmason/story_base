@@ -1,7 +1,10 @@
 <script>
+	import relativeTimeAgo from 'relative-time-ago';
+
 	import Account from 'svelte-material-icons/Account.svelte';
 	import ChartBubble from 'svelte-material-icons/ChartBubble.svelte';
 	import CircleSmall from 'svelte-material-icons/CircleSmall.svelte';
+	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
 	import CodeBraces from 'svelte-material-icons/CodeBraces.svelte';
 	import Dumbbell from 'svelte-material-icons/Dumbbell.svelte';
 	import HospitalBox from 'svelte-material-icons/HospitalBox.svelte';
@@ -13,7 +16,11 @@
 	<div class="row">
 		<h3><Account color="#006af8" /> {story.author}</h3>
 		<CircleSmall />
-		<h6>{story.created_at}</h6>
+		<h6>
+			{new Date(story.created_at).toDateString()}
+			<ClockOutline />
+			...{relativeTimeAgo(new Date(story.created_at), 'day')}
+		</h6>
 	</div>
 	<h2>{story.title}</h2>
 	<h4>{story.body}</h4>
@@ -88,6 +95,12 @@
 	h4 {
 		margin-top: 16px;
 		font-family: 'Playfair Display', serif;
+	}
+
+	h6 {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 	}
 
 	a {
