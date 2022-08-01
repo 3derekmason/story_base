@@ -31,8 +31,10 @@
 	</div>
 
 	<h4>{story.body}</h4>
-
-	<h6>{story.created_at}</h6>
+	<div class="row">
+		<a href={story.link} target="_blank">Read on Medium</a>
+		<h6>{story.created_at}</h6>
+	</div>
 </div>
 
 <style>
