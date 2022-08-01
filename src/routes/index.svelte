@@ -13,14 +13,12 @@
 		fetch('https://thestorybase.herokuapp.com/api/')
 			.then((res) => res.json())
 			.then((data) => {
-				if (selected === 'everything...') {
+				if (selected === 'everything..') {
 					stories = data;
 				} else {
-					const selection = selected.slice(0, -1);
 					const filtered = [];
 					data.forEach((story) => {
-						console.log(story.tags);
-						if (story.tags.includes(selection)) {
+						if (story.tags.includes(selected)) {
 							filtered.push(story);
 						}
 					});
@@ -29,7 +27,7 @@
 			});
 	};
 
-	let selected = 'everything...';
+	let selected = 'everything..';
 	let search = '';
 	const select = (string) => {
 		selected = string;
@@ -48,18 +46,18 @@
 <section>
 	<div class="message">
 		<button
-			disabled={selected === 'training.'}
+			disabled={selected === 'training'}
 			on:click={() => {
-				select('training.');
+				select('training');
 				getStories();
 			}}
 		>
 			TRAINING
 		</button>
 		<button
-			disabled={selected === 'programming.'}
+			disabled={selected === 'programming'}
 			on:click={() => {
-				select('programming.');
+				select('programming');
 				getStories();
 			}}
 		>
@@ -68,30 +66,41 @@
 		<div class="main">
 			<h1
 				on:click={() => {
-					select('everything...');
+					select('everything.');
 					getStories();
 				}}
 			>
 				STORY BASE
 			</h1>
 			<div class="row">
-				<div class="title"><h4>read about <em>{selected}</em></h4></div>
-				<div class="search"><input bind:value={search} /><Magnify size="28" color="#ff3e00" /></div>
+				<div class="title"><h4>read about <em>{selected}.</em></h4></div>
+				<div class="search">
+					<input bind:value={search} placeholder="Search for a tag" />
+					<button
+						on:click={() => {
+							selected = search;
+
+							getStories();
+						}}
+					>
+						<Magnify size="28" color="#ff3e00" /></button
+					>
+				</div>
 			</div>
 		</div>
 		<button
-			disabled={selected === 'health.'}
+			disabled={selected === 'wellness'}
 			on:click={() => {
-				select('health.');
+				select('wellness');
 				getStories();
 			}}
 		>
 			WELLNESS
 		</button>
 		<button
-			disabled={selected === 'life.'}
+			disabled={selected === 'life'}
 			on:click={() => {
-				select('life.');
+				select('life');
 				getStories();
 			}}
 		>
