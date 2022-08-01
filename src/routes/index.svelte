@@ -66,7 +66,7 @@
 		<div class="main">
 			<h1
 				on:click={() => {
-					select('everything.');
+					select('everything..');
 					getStories();
 				}}
 			>
