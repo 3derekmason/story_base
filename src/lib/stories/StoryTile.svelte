@@ -47,6 +47,7 @@
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 	.tile {
 		width: 90%;
 		height: 160px;
@@ -90,6 +91,7 @@
 		display: flex;
 		align-items: center;
 		gap: 4px;
+		font-family: 'Roboto Condensed', sans-serif;
 	}
 
 	h4 {
@@ -101,6 +103,7 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
+		color: var(--text-color);
 	}
 
 	a {
