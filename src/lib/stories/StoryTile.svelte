@@ -46,6 +46,7 @@
 		border-bottom: 1px solid var(--color-main);
 		padding: 8px;
 		padding-bottom: 16px;
+		background: linear-gradient(transparent, 80%, var(--color-main-light-transparent));
 	}
 	.row {
 		display: flex;
@@ -62,7 +63,7 @@
 		width: 48px;
 		height: 24px;
 		border-radius: 12px;
-		border: 0.5px solid var(--color-main-light);
+		border: 0.5px solid var(--color-main);
 		display: grid;
 		place-content: center;
 	}
