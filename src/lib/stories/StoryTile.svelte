@@ -1,4 +1,5 @@
 <script>
+	import Account from 'svelte-material-icons/Account.svelte';
 	import ChartBubble from 'svelte-material-icons/ChartBubble.svelte';
 	import CircleSmall from 'svelte-material-icons/CircleSmall.svelte';
 	import CodeBraces from 'svelte-material-icons/CodeBraces.svelte';
@@ -10,7 +11,7 @@
 
 <div class="tile">
 	<div class="row">
-		<h3>{story.author}</h3>
+		<h3><Account color="#006af8" /> {story.author}</h3>
 		<CircleSmall />
 		<h6>{story.created_at}</h6>
 	</div>
@@ -33,7 +34,6 @@
 				{/if}
 			{/each}
 		</ul>
-		<button>VIEW STORY</button>
 		<a href={story.link} target="_blank">Read on Medium</a>
 	</div>
 </div>
@@ -76,6 +76,13 @@
 	h2 {
 		font-size: 20px;
 		font-weight: 600;
+	}
+
+	h3 {
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+		gap: 4px;
 	}
 
 	h4 {
