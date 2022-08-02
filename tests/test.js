@@ -7,13 +7,13 @@ test('Start reading button loads text', async ({ page }) => {
 
 test('Buttons set correct selection', async ({ page }) => {
 	await page.goto('/');
-	expect(await page.innerText('h4')).toBe('stories about everything...');
+	expect(await page.innerText('h4')).toBe('read about everything...');
 	await page.locator('text=training').click();
-	expect(await page.innerText('h4')).toBe('stories about training.');
+	expect(await page.innerText('h4')).toBe('read about training.');
 	await page.locator('text=programming').click();
-	expect(await page.innerText('h4')).toBe('stories about programming.');
+	expect(await page.innerText('h4')).toBe('read about programming.');
 	await page.locator('text=wellness').click();
-	expect(await page.innerText('h4')).toBe('stories about health.');
+	expect(await page.innerText('h4')).toBe('read about wellness.');
 	await page.locator('text=life').click();
-	expect(await page.innerText('h4')).toBe('stories about life.');
+	expect(await page.innerText('h4')).toBe('read about life.');
 });
