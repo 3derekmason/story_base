@@ -1,6 +1,10 @@
 <section>
 	<h1>Submit your story!</h1>
-	<h2>Email submissions to <a href="mailto:thestorybase@gmail.com">thestorybase@gmail.com</a></h2>
+	<h2>
+		Email submissions to <a href="mailto:thestorybase@gmail.com" class="email"
+			>thestorybase@gmail.com</a
+		>
+	</h2>
 	<h3>Please include:</h3>
 	<ul>
 		<li>Your full name</li>

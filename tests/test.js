@@ -17,3 +17,9 @@ test('Buttons set correct selection', async ({ page }) => {
 	await page.locator('text=life').click();
 	expect(await page.innerText('h4')).toBe('read about life.');
 });
+
+test('Correct email for submissions loads', async ({ page }) => {
+	await page.goto('/submit');
+	const email = await page.locator('.email');
+	expect(await email.innerText()).toBe('thestorybase@gmail.com');
+});
