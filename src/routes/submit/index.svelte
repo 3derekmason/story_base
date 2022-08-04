@@ -1,3 +1,12 @@
+<script>
+	let newStory = {};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(e.target);
+		console.log(newStory);
+	};
+</script>
+
 <section>
 	<h1>Submit your story!</h1>
 	<h2>
@@ -11,6 +20,20 @@
 		<li>A markdown or pdf file of your story</li>
 		<li>Any other contribution credits you'd like your story to include</li>
 	</ul>
+	<form enctype="multipart/form-data" on:submit={handleSubmit}>
+		<label for="storyfile">Upload your story:</label>
+
+		<input
+			type="file"
+			id="storyfile"
+			name="storyfile"
+			accept=".md, .pdf"
+			on:change={(e) => {
+				newStory = e.target;
+			}}
+		/>
+		<button type="submit">SUBMIT</button>
+	</form>
 </section>
 
 <style>
