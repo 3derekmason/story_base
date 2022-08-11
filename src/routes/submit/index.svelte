@@ -1,15 +1,32 @@
 <script>
 	import Upload from 'svelte-material-icons/Upload.svelte';
-	let newStory = {};
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log(e.target);
-		console.log(newStory);
+	let newStory = '';
+	const submitFile = () => {
+		newStory = 'Yada yada';
+		let formData = new FormData();
+		formData.append('file', newStory);
+		console.log(formData);
 	};
 </script>
 
 <section>
 	<h1>Submit your story!</h1>
+	<h2>Upload File</h2>
+	<div class="row">
+		{#if !newStory}
+			<label class="file-upload">
+				Choose file
+				<input type="file" name="newFile" accept=" .md, .pdf" />
+			</label>
+		{:else}
+			<label class="file-uploaded">
+				Choose file
+				<input type="file" name="newFile" accept=" .md, .pdf" />
+			</label>
+		{/if}
+		<button on:click={submitFile}><Upload size="28" color="#444444" /></button>
+	</div>
+	<h4>or</h4>
 	<h2>
 		Email submissions to <a href="mailto:thestorybase@gmail.com" class="email"
 			>thestorybase@gmail.com</a
@@ -21,15 +38,6 @@
 		<li>A markdown or pdf file of your story</li>
 		<li>Any other contribution credits you'd like your story to include</li>
 	</ul>
-
-	<h2>Upload File</h2>
-	<div class="row">
-		<label class="file-upload">
-			Choose file
-			<input type="file" name="newFile" accept=" .md, .pdf" />
-		</label>
-		<button v-on:click="submitFile"><Upload size="24" color="#444444" /></button>
-	</div>
 </section>
 
 <style>
@@ -78,15 +86,33 @@
 	button {
 		border: none;
 		background: none;
+		cursor: pointer;
+		border-radius: 50%;
+		transition: 0.1s;
+	}
+	button:hover {
+		background: var(--color-story-transparent);
+		transition: 0.1s;
+	}
+	button:active {
+		background: var(--primary-color);
 	}
 	input[type='file'] {
 		display: none;
 	}
-	.file-upload {
+
+	.file-upload,
+	.file-uploaded {
+		width: 240px;
 		border: 0.5px solid var(--color-story);
 		border-radius: 16px;
-		display: inline-block;
+		display: flex;
 		padding: 6px 12px;
+		align-items: center;
+		justify-content: center;
 		cursor: pointer;
+	}
+	.file-uploaded {
+		background: var(--color-story-light);
 	}
 </style>
