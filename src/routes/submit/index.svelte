@@ -1,4 +1,5 @@
 <script>
+	import Upload from 'svelte-material-icons/Upload.svelte';
 	let newStory = {};
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -20,20 +21,15 @@
 		<li>A markdown or pdf file of your story</li>
 		<li>Any other contribution credits you'd like your story to include</li>
 	</ul>
-	<form enctype="multipart/form-data" on:submit={handleSubmit}>
-		<label for="storyfile">Upload your story:</label>
 
-		<input
-			type="file"
-			id="storyfile"
-			name="storyfile"
-			accept=".md, .pdf"
-			on:change={(e) => {
-				newStory = e.target;
-			}}
-		/>
-		<button type="submit">SUBMIT</button>
-	</form>
+	<h2>Upload File</h2>
+	<div class="row">
+		<label class="file-upload">
+			Choose file
+			<input type="file" name="newFile" accept=" .md, .pdf" />
+		</label>
+		<button v-on:click="submitFile"><Upload size="24" color="#444444" /></button>
+	</div>
 </section>
 
 <style>
@@ -43,6 +39,13 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+	}
+
+	.row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
 	}
 
 	h1 {
@@ -70,5 +73,20 @@
 	h3 {
 		margin: 0;
 		font-size: 14px;
+	}
+
+	button {
+		border: none;
+		background: none;
+	}
+	input[type='file'] {
+		display: none;
+	}
+	.file-upload {
+		border: 0.5px solid var(--color-story);
+		border-radius: 16px;
+		display: inline-block;
+		padding: 6px 12px;
+		cursor: pointer;
 	}
 </style>
