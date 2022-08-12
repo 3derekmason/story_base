@@ -6,7 +6,6 @@
 	};
 	const editFile = (e) => {
 		e.preventDefault();
-		console.log('beep');
 		const files = e.target.files;
 		const fileReader = new FileReader();
 		fileReader.readAsDataURL(files[0]);
@@ -29,7 +28,7 @@
 				<input type="file" name="newFile" accept=" .md, .pdf" on:input={editFile} />
 			</label>
 		{/if}
-		<button on:click={submitFile}><Upload size="28" color="#444444" /></button>
+		<button disabled={!newStory} on:click={submitFile}><Upload size="28" color="#444444" /></button>
 	</div>
 	<h4>or</h4>
 	<h2>
@@ -89,18 +88,20 @@
 	}
 
 	button {
-		border: none;
+		border: 1px solid var(--color-story-light);
+		box-shadow: 0px 2px 0px var(--color-story);
 		background: none;
 		cursor: pointer;
 		border-radius: 50%;
 		transition: 0.1s;
 	}
-	button:hover {
-		background: var(--color-story-transparent);
-		transition: 0.1s;
+	button:disabled {
+		box-shadow: none;
+		transform: translateY(2px);
 	}
 	button:active {
-		background: var(--primary-color);
+		box-shadow: none;
+		transform: translateY(2px);
 	}
 	input[type='file'] {
 		display: none;
@@ -108,7 +109,7 @@
 
 	.file-upload,
 	.file-uploaded {
-		width: 240px;
+		width: 272px;
 		border: 0.5px solid var(--color-story);
 		border-radius: 16px;
 		display: flex;
@@ -116,8 +117,15 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+		background: var(--color-story-transparent);
+		transition: 0.1s;
+	}
+	.file-upload:hover {
+		background: var(--tertiary-color);
+		transition: 0.1s;
 	}
 	.file-uploaded {
 		background: var(--color-story-light);
+		color: #fff;
 	}
 </style>
