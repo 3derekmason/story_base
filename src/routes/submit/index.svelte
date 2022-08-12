@@ -2,10 +2,15 @@
 	import Upload from 'svelte-material-icons/Upload.svelte';
 	let newStory = '';
 	const submitFile = () => {
-		newStory = 'Yada yada';
-		let formData = new FormData();
-		formData.append('file', newStory);
-		console.log(formData);
+		console.log(newStory);
+	};
+	const editFile = (e) => {
+		e.preventDefault();
+		console.log('beep');
+		const files = e.target.files;
+		const fileReader = new FileReader();
+		fileReader.readAsDataURL(files[0]);
+		newStory = files[0];
 	};
 </script>
 
@@ -16,12 +21,12 @@
 		{#if !newStory}
 			<label class="file-upload">
 				Choose file
-				<input type="file" name="newFile" accept=" .md, .pdf" />
+				<input type="file" name="newFile" accept=" .md, .pdf" on:input={editFile} />
 			</label>
 		{:else}
 			<label class="file-uploaded">
-				Choose file
-				<input type="file" name="newFile" accept=" .md, .pdf" />
+				{newStory.name}
+				<input type="file" name="newFile" accept=" .md, .pdf" on:input={editFile} />
 			</label>
 		{/if}
 		<button on:click={submitFile}><Upload size="28" color="#444444" /></button>
