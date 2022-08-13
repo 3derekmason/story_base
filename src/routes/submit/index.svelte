@@ -1,34 +1,66 @@
 <script>
 	import Upload from 'svelte-material-icons/Upload.svelte';
-	let newStory = '';
+	let newStory = {
+		title: '',
+		author: '',
+		body: '',
+		tags: []
+	};
+	let newFile = '';
+
 	const submitFile = () => {
-		console.log(newStory);
+		console.log(newFile);
+		let formData = new FormData();
+		formData.append('file', newFile);
+		fetch('http://localhost:5000/api/files', {
+			method: 'POST',
+			'Content-Type': 'multipart/form-data',
+			body: formData
+		})
+			.then(() => {
+				console.log('Thanks for the submission!');
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+		newFile = '';
 	};
 	const editFile = (e) => {
 		e.preventDefault();
 		const files = e.target.files;
 		const fileReader = new FileReader();
 		fileReader.readAsDataURL(files[0]);
-		newStory = files[0];
+		newFile = files[0];
 	};
 </script>
 
 <section>
 	<h1>Submit your story!</h1>
-	<h2>Upload File</h2>
+
 	<div class="row">
-		{#if !newStory}
+		<input type="text" class="input-lg" placeholder="Title of your story" />
+	</div>
+	<div class="row">
+		<input type="text" placeholder="First name" />
+		<input type="text" placeholder="Last name" />
+	</div>
+	<div class="row">
+		<textarea class="input-lg" name="body" rows="2" placeholder="Little summary of your story..." />
+	</div>
+	<div class="row">
+		<h2>Upload File</h2>
+		{#if !newFile}
 			<label class="file-upload">
 				Choose file
 				<input type="file" name="newFile" accept=" .md, .pdf" on:input={editFile} />
 			</label>
 		{:else}
 			<label class="file-uploaded">
-				{newStory.name}
+				{newFile.name}
 				<input type="file" name="newFile" accept=" .md, .pdf" on:input={editFile} />
 			</label>
 		{/if}
-		<button disabled={!newStory} on:click={submitFile}><Upload size="28" color="#444444" /></button>
+		<button disabled={!newFile} on:click={submitFile}><Upload size="28" color="#444444" /></button>
 	</div>
 	<h4>or</h4>
 	<h2>
@@ -58,6 +90,8 @@
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
+		width: 100%;
+		height: 64px;
 	}
 
 	h1 {
@@ -103,8 +137,33 @@
 		box-shadow: none;
 		transform: translateY(2px);
 	}
+
+	input {
+		width: 220px;
+		border: none;
+		height: 40px;
+		background: none;
+		border-bottom: 1px solid var(--color-story);
+	}
+
+	.input-lg {
+		width: 464px;
+		border: none;
+		height: 56px;
+		border-bottom: 1px solid var(--color-story);
+	}
 	input[type='file'] {
 		display: none;
+	}
+
+	textarea {
+		resize: none;
+		background: none;
+	}
+
+	textarea:focus,
+	input:focus {
+		outline: none;
 	}
 
 	.file-upload,
