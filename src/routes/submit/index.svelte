@@ -10,7 +10,14 @@
 	let newFile = '';
 
 	const submitFile = () => {
-		console.log(newFile);
+		fetch('http://localhost:5000/api/stories', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(newStory)
+		})
+			.then((data) => console.log(data))
+			.catch((err) => console.error(err));
+
 		let formData = new FormData();
 		formData.append('file', newFile);
 		fetch('http://localhost:5000/api/files', {
