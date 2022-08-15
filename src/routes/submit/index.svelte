@@ -2,7 +2,8 @@
 	import Upload from 'svelte-material-icons/Upload.svelte';
 	let newStory = {
 		title: '',
-		author: '',
+		authorFirst: '',
+		authorLast: '',
 		body: '',
 		tags: []
 	};
@@ -38,14 +39,25 @@
 	<h1>Submit your story!</h1>
 
 	<div class="row">
-		<input type="text" class="input-lg" placeholder="Title of your story" />
+		<input
+			type="text"
+			class="input-lg"
+			bind:value={newStory.title}
+			placeholder="Title of your story"
+		/>
 	</div>
 	<div class="row">
-		<input type="text" placeholder="First name" />
-		<input type="text" placeholder="Last name" />
+		<input type="text" bind:value={newStory.authorFirst} placeholder="First name" />
+		<input type="text" bind:value={newStory.authorLast} placeholder="Last name" />
 	</div>
 	<div class="row">
-		<textarea class="input-lg" name="body" rows="2" placeholder="Little summary of your story..." />
+		<textarea
+			class="input-lg"
+			name="body"
+			rows="2"
+			bind:value={newStory.body}
+			placeholder="Little summary of your story..."
+		/>
 	</div>
 	<div class="row">
 		<h2>Upload File</h2>
