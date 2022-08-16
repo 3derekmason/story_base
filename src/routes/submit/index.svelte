@@ -76,13 +76,21 @@
 		<p>Tags:</p>
 		{#each tagOptions as option}
 			{#if option === 'life'}
-				<button class="tag">Life <ChartBubble size="16" /></button>
+				<button disabled={newStory.tags.includes(option)} class="tag"
+					>Life <ChartBubble size="16" /></button
+				>
 			{:else if option === 'programming'}
-				<button class="tag">Programming <CodeBraces size="16" /></button>
+				<button disabled={newStory.tags.includes(option)} class="tag"
+					>Programming <CodeBraces size="16" /></button
+				>
 			{:else if option === 'training'}
-				<button class="tag">Training <Dumbbell size="16" /></button>
+				<button disabled={newStory.tags.includes(option)} class="tag"
+					>Training <Dumbbell size="16" /></button
+				>
 			{:else if option === 'wellness'}
-				<button class="tag">Wellness <HospitalBox size="16" /></button>
+				<button disabled={newStory.tags.includes(option)} class="tag"
+					>Wellness <HospitalBox size="16" /></button
+				>
 			{/if}
 		{/each}
 	</div>
@@ -182,6 +190,11 @@
 		gap: 2px;
 		font-size: 10px;
 		font-family: 'Courier New', Courier, monospace;
+		color: #fff;
+		background: var(--color-story-light);
+	}
+	button.tag:disabled {
+		background: var(--color-story);
 	}
 
 	input {
