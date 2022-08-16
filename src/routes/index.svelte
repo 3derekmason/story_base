@@ -27,6 +27,15 @@
 			});
 	};
 
+	let files = [];
+	const getFiles = () => {
+		fetch('http://localhost:5000/api/files')
+			.then((res) => res.json())
+			.then((data) => {
+				files = data;
+			});
+	};
+
 	let selected = 'everything..';
 	let search = '';
 	const select = (string) => {
@@ -34,7 +43,8 @@
 	};
 
 	onMount(async () => {
-		await getStories();
+		getStories();
+		getFiles();
 	});
 </script>
 

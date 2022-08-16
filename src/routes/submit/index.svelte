@@ -170,7 +170,7 @@
 	h1 {
 		margin: 0;
 		width: 100%;
-		height: 160px;
+		height: 140px;
 		font-weight: 400;
 		font-size: 72px;
 		letter-spacing: 2px;
@@ -187,6 +187,10 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
+	}
+	h4 {
+		margin: none;
+		padding: none;
 	}
 
 	button {
@@ -226,7 +230,7 @@
 	}
 
 	input {
-		width: 220px;
+		width: 240px;
 		border: none;
 		height: 40px;
 		background: none;
@@ -234,7 +238,7 @@
 	}
 
 	.input-lg {
-		width: 464px;
+		width: 504px;
 		border: none;
 		height: 56px;
 		border-bottom: 1px solid var(--color-story);
