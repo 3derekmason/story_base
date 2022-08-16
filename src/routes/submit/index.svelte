@@ -5,7 +5,12 @@
 	import Dumbbell from 'svelte-material-icons/Dumbbell.svelte';
 	import HospitalBox from 'svelte-material-icons/HospitalBox.svelte';
 
-	const tagOptions = ['life', 'programming', 'training', 'wellness'];
+	const tagOptions = {
+		life: false,
+		programming: false,
+		training: false,
+		wellness: false
+	};
 	let newStory = {
 		title: '',
 		authorFirst: '',
@@ -14,6 +19,13 @@
 		tags: []
 	};
 	let newFile = '';
+
+	const addTag = (tag) => {
+		if (!newStory.tags.includes(tag)) {
+			newStory.tags.push(tag);
+			tagOptions[tag] = true;
+		}
+	};
 
 	const submitFile = () => {
 		fetch('http://localhost:5000/api/stories', {
@@ -74,25 +86,38 @@
 	</div>
 	<div class="row">
 		<p>Tags:</p>
-		{#each tagOptions as option}
-			{#if option === 'life'}
-				<button disabled={newStory.tags.includes(option)} class="tag"
-					>Life <ChartBubble size="16" /></button
-				>
-			{:else if option === 'programming'}
-				<button disabled={newStory.tags.includes(option)} class="tag"
-					>Programming <CodeBraces size="16" /></button
-				>
-			{:else if option === 'training'}
-				<button disabled={newStory.tags.includes(option)} class="tag"
-					>Training <Dumbbell size="16" /></button
-				>
-			{:else if option === 'wellness'}
-				<button disabled={newStory.tags.includes(option)} class="tag"
-					>Wellness <HospitalBox size="16" /></button
-				>
-			{/if}
-		{/each}
+
+		<button
+			disabled={tagOptions.life}
+			class="tag"
+			on:click={() => {
+				addTag('life');
+			}}>Life <ChartBubble size="16" /></button
+		>
+
+		<button
+			disabled={tagOptions.programming}
+			class="tag"
+			on:click={() => {
+				addTag('programming');
+			}}>Programming <CodeBraces size="16" /></button
+		>
+
+		<button
+			disabled={tagOptions.training}
+			class="tag"
+			on:click={() => {
+				addTag('training');
+			}}>Training <Dumbbell size="16" /></button
+		>
+
+		<button
+			disabled={tagOptions.wellness}
+			class="tag"
+			on:click={() => {
+				addTag('wellness');
+			}}>Wellness <HospitalBox size="16" /></button
+		>
 	</div>
 	<div class="row">
 		<h2>Upload File</h2>
@@ -173,6 +198,7 @@
 	button:disabled {
 		box-shadow: none;
 		transform: translateY(2px);
+		cursor: default;
 	}
 	button:active {
 		box-shadow: none;
@@ -194,7 +220,7 @@
 		background: var(--color-story-light);
 	}
 	button.tag:disabled {
-		background: var(--color-story);
+		background: var(--accent-color);
 	}
 
 	input {
