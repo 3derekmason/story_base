@@ -50,6 +50,13 @@
 				console.error(err);
 			});
 		newFile = '';
+		newStory = {
+			title: '',
+			authorFirst: '',
+			authorLast: '',
+			body: '',
+			tags: []
+		};
 	};
 	const editFile = (e) => {
 		e.preventDefault();
@@ -180,11 +187,6 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
-	}
-
-	h3 {
-		margin: 0;
-		font-size: 14px;
 	}
 
 	button {

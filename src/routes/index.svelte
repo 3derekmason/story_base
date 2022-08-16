@@ -83,7 +83,7 @@
 							getStories();
 						}}
 					>
-						<Magnify size="28" color="#ff3e00" /></button
+						<Magnify size="28" color="#008a65" /></button
 					>
 				</div>
 			</div>
@@ -177,7 +177,7 @@
 		display: flex;
 		justify-content: center;
 		gap: 16px;
-		border: 1px solid red;
+		border: 1px solid var(--color-main-light);
 		border-radius: 16px;
 		transition: 0.1s;
 	}

@@ -41,7 +41,7 @@
 				{/if}
 			{/each}
 		</ul>
-		<a href={story.link} target="_blank">Read on Medium</a>
+		<a href={story.link} target="_blank">Read Story</a>
 	</div>
 </div>
 
