@@ -1,5 +1,11 @@
 <script>
 	import Upload from 'svelte-material-icons/Upload.svelte';
+	import ChartBubble from 'svelte-material-icons/ChartBubble.svelte';
+	import CodeBraces from 'svelte-material-icons/CodeBraces.svelte';
+	import Dumbbell from 'svelte-material-icons/Dumbbell.svelte';
+	import HospitalBox from 'svelte-material-icons/HospitalBox.svelte';
+
+	const tagOptions = ['life', 'programming', 'training', 'wellness'];
 	let newStory = {
 		title: '',
 		authorFirst: '',
@@ -67,6 +73,20 @@
 		/>
 	</div>
 	<div class="row">
+		<p>Tags:</p>
+		{#each tagOptions as option}
+			{#if option === 'life'}
+				<button class="tag">Life <ChartBubble size="16" /></button>
+			{:else if option === 'programming'}
+				<button class="tag">Programming <CodeBraces size="16" /></button>
+			{:else if option === 'training'}
+				<button class="tag">Training <Dumbbell size="16" /></button>
+			{:else if option === 'wellness'}
+				<button class="tag">Wellness <HospitalBox size="16" /></button>
+			{/if}
+		{/each}
+	</div>
+	<div class="row">
 		<h2>Upload File</h2>
 		{#if !newFile}
 			<label class="file-upload">
@@ -87,12 +107,6 @@
 			>thestorybase@gmail.com</a
 		>
 	</h2>
-	<h3>Please include:</h3>
-	<ul>
-		<li>Your full name</li>
-		<li>A markdown or pdf file of your story</li>
-		<li>Any other contribution credits you'd like your story to include</li>
-	</ul>
 </section>
 
 <style>
@@ -155,6 +169,19 @@
 	button:active {
 		box-shadow: none;
 		transform: translateY(2px);
+	}
+
+	button.tag {
+		width: 88px;
+		height: 40px;
+		border-radius: 8px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 2px;
+		font-size: 10px;
+		font-family: 'Courier New', Courier, monospace;
 	}
 
 	input {

@@ -14,7 +14,7 @@
 
 <div class="tile">
 	<div class="row">
-		<h3><Account color="#006af8" /> {story.author}</h3>
+		<h3><Account color="#006af8" /> {story.authorFirst} {story.authorLast}</h3>
 		<CircleSmall />
 		<h6>
 			{new Date(story.created_at).toDateString()}
