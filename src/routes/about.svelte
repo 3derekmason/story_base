@@ -115,8 +115,13 @@
 		box-shadow: 0px 5px 5px -3px #00000020, 0px 8px 10px 1px #00000014, 0px 3px 14px 2px #00000012;
 		border-radius: 4px;
 		padding: 48px;
-		background: radial-gradient(ellipse at right, var(--color-story-transparent), 20%, transparent),
-			radial-gradient(ellipse at bottom, #ff3e0020, 30%, transparent);
+		background: radial-gradient(
+				ellipse at right,
+				var(--color-main-light-transparent),
+				40%,
+				transparent
+			),
+			radial-gradient(ellipse at bottom, var(--color-story-transparent), 20%, transparent);
 		display: flex;
 		justify-content: center;
 		align-items: center;
