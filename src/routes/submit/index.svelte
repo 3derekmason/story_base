@@ -223,10 +223,15 @@
 		font-size: 10px;
 		font-family: 'Courier New', Courier, monospace;
 		color: #fff;
-		background: var(--color-story-light);
+		background: var(--color-story);
+		border: 1px solid var(--color-story);
+		box-shadow: 0px 2px 0px var(--accent-color);
 	}
-	button.tag:disabled {
-		background: var(--accent-color);
+	button.tag:disabled,
+	button.tag:active {
+		box-shadow: none;
+		transform: translateY(2px);
+		background: var(--color-story-light);
 	}
 
 	input {
