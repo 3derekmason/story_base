@@ -10,6 +10,14 @@
 	import HospitalBox from 'svelte-material-icons/HospitalBox.svelte';
 
 	export let story;
+
+	const getStory = () => {
+		fetch(`http://localhost:5000/api/file?added=${story.created_at}`)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
+	};
 </script>
 
 <div class="tile">
@@ -41,7 +49,7 @@
 				{/if}
 			{/each}
 		</ul>
-		<a href={story.link} target="_blank">Read Story</a>
+		<button on:click={getStory}>Read Story</button>
 	</div>
 </div>
 
