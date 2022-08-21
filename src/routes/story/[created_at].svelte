@@ -18,3 +18,11 @@
 <div class="story">
 	{@html displayStory}
 </div>
+
+<style>
+	.story {
+		height: var(--view-height);
+		padding: 64px;
+		overflow-y: auto;
+	}
+</style>
