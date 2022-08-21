@@ -19,7 +19,7 @@
 	{@html displayStory}
 </div>
 
-<style>
+<style scoped>
 	.story {
 		height: var(--view-height);
 		padding: 64px;
