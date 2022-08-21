@@ -28,6 +28,7 @@
 		"@fontsource/fira-mono": "^4.5.0",
 		"cookie": "^0.4.1",
 		"relative-time-ago": "^1.0.8",
+		"showdown": "^2.1.0",
 		"svelte-material-icons": "^2.0.4"
 	}
 }
