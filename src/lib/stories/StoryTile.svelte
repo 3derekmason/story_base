@@ -49,7 +49,7 @@
 				{/if}
 			{/each}
 		</ul>
-		<button on:click={getStory}>Read Story</button>
+		<a sveltekit:prefetch href={`/story/${story.title}`}>Read Story</a>
 	</div>
 </div>
 
