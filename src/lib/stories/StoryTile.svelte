@@ -50,7 +50,7 @@
 	@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 	.tile {
 		width: 90%;
-		height: 160px;
+		height: 200px;
 		border-bottom: 1px solid var(--color-main);
 		padding: 8px;
 		padding-bottom: 16px;

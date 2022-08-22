@@ -18,7 +18,7 @@
 				} else {
 					const filtered = [];
 					data.forEach((story) => {
-						if (story.title.includes(search) || story.body.includes(search)) {
+						if (JSON.stringify(story).includes(search)) {
 							filtered.push(story);
 						}
 					});
@@ -26,12 +26,7 @@
 				}
 			});
 	};
-
-	let selected = 'everything..';
 	let search = '';
-	const select = (string) => {
-		selected = string;
-	};
 
 	onMount(async () => {
 		getStories();
@@ -74,9 +69,9 @@
 				STORY BASE
 			</h1>
 			<div class="row">
-				<div class="title"><h4>read about <em>{search || 'everything..'}.</em></h4></div>
+				<div class="title"><h4>read about</h4></div>
 				<div class="search">
-					<input bind:value={search} placeholder="Search stories" />
+					<input bind:value={search} placeholder="everything..." />
 					<button on:click={getStories}> <Magnify size="28" color="#008a65" /></button>
 				</div>
 			</div>
@@ -211,7 +206,7 @@
 
 	.title {
 		padding-left: 8px;
-		width: 200px;
+		padding-right: 16px;
 		backdrop-filter: blur(4px);
 		display: flex;
 		align-items: center;
