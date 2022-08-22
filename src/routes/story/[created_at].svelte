@@ -16,13 +16,18 @@
 </script>
 
 <div class="story">
-	{@html displayStory}
+	<div class="display">{@html displayStory}</div>
 </div>
 
 <style scoped>
 	.story {
 		height: var(--view-height);
 		padding: 64px;
+		display: flex;
+		justify-content: center;
 		overflow-y: auto;
+	}
+	.display {
+		width: 80%;
 	}
 </style>
