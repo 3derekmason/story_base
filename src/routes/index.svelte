@@ -215,10 +215,6 @@
 		font-variant: small-caps;
 	}
 
-	em {
-		color: var(--color-story);
-		font-variant: normal;
-	}
 	.tiles {
 		width: 90%;
 		height: calc(100% - 40px);
@@ -228,5 +224,19 @@
 		flex-direction: column;
 		gap: 24px;
 		overflow: auto;
+	}
+
+	@media screen and (max-width: 600px) {
+		.message {
+			gap: 8px;
+		}
+
+		.message button {
+			display: none;
+		}
+		h1 {
+			font-size: 44px;
+			margin-bottom: 24px;
+		}
 	}
 </style>
