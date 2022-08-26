@@ -187,4 +187,46 @@
 			text-shadow: 0px 0px 0px var(--primary-color);
 		}
 	}
+	@media screen and (max-width: 600px) {
+		.content {
+			height: 100%;
+			overflow-y: auto;
+			flex-direction: column;
+			padding: 8px;
+		}
+		.about {
+			padding: 0;
+			width: 80%;
+			padding: 12px;
+			background: radial-gradient(
+					ellipse at right,
+					var(--color-main-light-transparent),
+					40%,
+					transparent
+				),
+				radial-gradient(ellipse at bottom, var(--color-story-transparent), 20%, transparent);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 16px;
+		}
+		h1 {
+			font-size: 48px;
+		}
+		button {
+			margin-top: 8px;
+			width: 180px;
+			height: 40px;
+			border-radius: 8px;
+			border: none;
+			color: #fff;
+			background: var(--color-story);
+			transition: 0.1s;
+		}
+		.welcome {
+			justify-content: flex-start;
+			height: 44%;
+		}
+	}
 </style>
