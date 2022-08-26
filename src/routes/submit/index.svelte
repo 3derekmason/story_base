@@ -28,7 +28,7 @@
 	};
 
 	const submitFile = () => {
-		fetch('http://localhost:5000/api/stories', {
+		fetch('https://thestorybase.herokuapp.com/api/stories', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newStory)
@@ -38,7 +38,7 @@
 
 		let formData = new FormData();
 		formData.append('file', newFile);
-		fetch('http://localhost:5000/api/files', {
+		fetch('https://thestorybase.herokuapp.com/api/files', {
 			method: 'POST',
 			'Content-Type': 'multipart/form-data',
 			body: formData

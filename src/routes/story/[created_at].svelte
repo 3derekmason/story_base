@@ -6,7 +6,7 @@
 	const created_at = $page.url.pathname.slice(7);
 	let displayStory;
 	onMount(() => {
-		fetch(`http://localhost:5000/api/file?added=${created_at}`)
+		fetch(`https://thestorybase.herokuapp.com/api/file?added=${created_at}`)
 			.then((res) => res.json())
 			.then((data) => {
 				const html = converter.makeHtml(data);
