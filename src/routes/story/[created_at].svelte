@@ -30,4 +30,20 @@
 	.display {
 		width: 80%;
 	}
+
+	@media screen and (max-width: 600px) {
+		.story {
+			height: 100%;
+			padding: 8px;
+			display: flex;
+			justify-content: center;
+			overflow-y: auto;
+		}
+		.display {
+			width: 90%;
+		}
+		img {
+			max-width: 300px;
+		}
+	}
 </style>
