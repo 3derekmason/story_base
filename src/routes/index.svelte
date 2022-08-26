@@ -229,6 +229,7 @@
 	@media screen and (max-width: 600px) {
 		.message {
 			gap: 8px;
+			border-bottom: none;
 		}
 
 		.message button {

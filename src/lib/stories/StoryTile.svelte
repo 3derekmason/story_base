@@ -109,4 +109,10 @@
 	a {
 		text-transform: uppercase;
 	}
+
+	@media screen and (max-width: 600px) {
+		.tile {
+			height: 320px;
+		}
+	}
 </style>

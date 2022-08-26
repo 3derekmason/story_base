@@ -26,4 +26,9 @@
 		border-bottom: 16px solid var(--text-color);
 		border-radius: 18px;
 	}
+	@media screen and (max-width: 600px) {
+		.turningPage {
+			height: 40px;
+		}
+	}
 </style>
