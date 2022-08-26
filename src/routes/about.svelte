@@ -35,10 +35,10 @@
 		</div>
 		<TurningPage />
 		<div class="row">
-			<a id="direct" href="https://github.com/3derekmason/story_base" target="_blank"
+			<a class="direct" href="https://github.com/3derekmason/story_base" target="_blank"
 				>VIEW CODE <CodeTags size="24" /></a
 			>
-			<a id="direct" href="https://derekmason.dev" target="_blank"
+			<a class="direct" href="https://derekmason.dev" target="_blank"
 				>ABOUT DEREK <ChevronRight size="24" /></a
 			>
 		</div>
@@ -133,7 +133,7 @@
 		color: var(--color-story);
 		margin: 0;
 	}
-	a#direct {
+	a.direct {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -146,7 +146,7 @@
 		border-radius: 8px;
 		box-shadow: 0px 4px 0px var(--color-story);
 	}
-	a#direct:active {
+	a.direct:active {
 		box-shadow: none;
 		transform: translateY(4px);
 	}
