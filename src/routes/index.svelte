@@ -30,7 +30,6 @@
 
 	onMount(async () => {
 		getStories();
-		getFiles();
 	});
 </script>
 
