@@ -1,38 +1,11 @@
-# create-svelte
+<div align="center">
+  <img src="./static/welcometostorybase.png" alt="Welcome to Story Base">
+</div>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Story Base
 
-## Creating a project
+Hi there, I'm Derek. Thanks for checking out my collection.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Story Base was created as a home for my stories and articles. I wanted to make an accessible and enjoyable exprience for readers, and truly make these stories my own.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Built using SvelteKit, tested with PlayWright, and developed according to Web Standards definded by the WC3.
